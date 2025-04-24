@@ -1,7 +1,7 @@
 const app = require('express')();
 const {MongoClient} = require('mongodb');
 
-const url = "mongodb+srv://ryanchen649585:Rmcmongodb05@cluster0.uqmqa6r.mongodb.net/";
+const url = "mongodb+srv://ryanchen649585:Rmcmongodb05@cluster0.uqmqa6r.mongodb.net/?retryWrites=true&w=majority&ssl=true";
 
 const databaseName = "Stock";
 
@@ -38,9 +38,8 @@ app.get('/process', async (req, res) => {
     const query = req.query.query;
     const searchType = req.query.searchType;
 
-    let results = [];
-
     try {
+        let results = [];
         if (searchType === 'ticker'){
             results = await collection.find({ticker: query}).toArray();
         } else if (searchType === 'company'){
@@ -55,4 +54,4 @@ app.get('/process', async (req, res) => {
     } catch (error) {
         console.error("Error processing search:", error);
     }
-})
+});
