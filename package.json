@@ -1,0 +1,14 @@
+{
+  "name": "stock-ticker-search",
+  "version": "1.0.0",
+  "description": "Stock ticker and company name search application",
+  "main": "stockTicker.js",
+  "scripts": {
+    "start": "node stockTicker.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongodb": "^6.16.0",
+    "pug": "^3.0.3"
+  }
+}

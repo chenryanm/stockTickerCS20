@@ -1,0 +1,71 @@
+html 
+    head 
+        title Stock Ticker Search
+        style.
+            body {
+                background-color: #1a1a1a;
+                color: #ffffff;
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                min-height: 800px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            h1 {
+                color: #2d5a27;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+            form {
+                width: 500px;
+                padding: 20px;
+                background-color: #2d5a27;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.5);
+                margin-bottom: 150px;
+            }
+            div {
+                margin-bottom: 15px;
+            }
+            label {
+                display: block;
+                margin-bottom: 5px;
+                color: #ffffff;
+            }
+            input[type="text"], select {
+                width: 500px;
+                padding: 8px;
+                border: 1px solid #1a1a1a;
+                border-radius: 4px;
+                background-color: #333333;
+                color: #ffffff;
+            }
+            button {
+                background-color: #1a1a1a;
+                color: #ffffff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                width: 500px;
+                font-size: 16px;
+            }
+            button:hover {
+                background-color: #333333;
+            }
+    body 
+        h1 Search for A Stock by Ticker or Company Name
+        form(action="/process" method="GET")
+            div 
+                label(for="query") Search: 
+                input(type="text" id="query" name="query" required)
+            div 
+                label(for="searchType") Search Type: 
+                select(id="searchType" name="searchType")
+                    option(value="ticker") Ticker
+                    option(value="company") Company Name
+            button(type="submit") Search
+                
