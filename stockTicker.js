@@ -1,7 +1,7 @@
 const app = require('express')();
 const {MongoClient} = require('mongodb');
 
-const url = "mongodb+srv://ryanchen649585:Rmcmongodb05@cluster0.uqmqa6r.mongodb.net/Stock?retryWrites=true&w=majority&ssl=true&tls=true";
+const url = "mongodb+srv://ryanchen649585:Rmcmongodb05@cluster0.uqmqa6r.mongodb.net/Stock?retryWrites=true&w=majority";
 
 const databaseName = "Stock";
 
