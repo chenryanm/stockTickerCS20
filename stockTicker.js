@@ -15,14 +15,8 @@ async function connectToMongoDB(){
             deprecationErrors: true,
         },
         tls: true,
-        tlsAllowInvalidCertificates: true,
-        tlsAllowInvalidHostnames: true,
         connectTimeoutMS: 10000,
         socketTimeoutMS: 45000,
-        ssl: true,
-        sslValidate: false,
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
     });
     
     try {
