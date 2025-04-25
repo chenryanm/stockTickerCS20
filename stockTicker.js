@@ -8,19 +8,9 @@ const databaseName = "Stock";
 let collection;
 
 async function connectToMongoDB(){
-    const client = new MongoClient(url, {
-        serverApi: {
-            version: '1',
-            strict: true,
-            deprecationErrors: true,
-        },
-        tls: true,
-        connectTimeoutMS: 10000,
-        socketTimeoutMS: 45000,
-    });
+    const client = await MongoClient.connect(url);
     
     try {
-        await client.connect();
         const db = client.db(databaseName);
         collection = db.collection("PublicCompanies");
         console.log("Connected to MongoDB Atlas");
