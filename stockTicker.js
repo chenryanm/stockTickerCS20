@@ -21,7 +21,6 @@ async function connectToMongoDB(){
         });
     } catch (error) {
         console.error("Error connecting to MongoDB Atlas:", error);
-        process.exit(1);
     }
 }
 
@@ -53,6 +52,5 @@ app.get('/process', async (req, res) => {
         res.render('displayResults', {results: results});
     } catch (error) {
         console.error("Error processing search:", error);
-        res.status(500).send("Error processing search");
     }
 });
